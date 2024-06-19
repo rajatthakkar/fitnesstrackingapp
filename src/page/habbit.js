@@ -12,13 +12,14 @@ function HabbitCard() {
   // const [updatedValue, setUpdatedValue] = useState([]);
   const {id} = useParams()
   const dispatch = useDispatch();
+  const habbits = useSelector(Singlehabits);
   useEffect(() => {
     if (id) {
       dispatch(fetchHabbit(id));
     }
-  }, [dispatch, id]);
+  }, [dispatch, id,habbits]);
 
-  const habbits = useSelector(Singlehabits);
+ 
 
   
   // const habbit = habbits.find(hb => hb.id === id);
