@@ -1,0 +1,75 @@
+.boxBody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: inherit;
+    height: inherit;
+    margin-top: 2rem;
+  
+}
+.formBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 10rem;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0.5rem;
+}
+
+.inputBody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 2rem;
+    border: 0.1rem solid #797198;
+    border-radius: 0.5rem;
+}
+input[type=text]{
+    width: 95%;
+    height: 1.8rem;
+    box-sizing: border-box;
+    border:0.1rem solid #797198;
+    border-radius: 0.2rem;
+    border: none;
+}
+input[type=text]:focus{    
+    outline:#797198;
+    border:0px;    
+  }
+  .inputBody:focus{
+    border: 0.5rem solid greenyellow;
+  }
+  .inputBodyFocused{
+    border:0.1rem solid greenyellow;
+  }
+  button{
+    height: 2rem;
+     background-color:#797198 ;
+     text-decoration: none;
+     border: none;
+     border-radius: 4px;
+     color: aliceblue;
+     margin-top: 1rem;
+  }
+  button:hover{
+    background-color: green;
+    cursor: pointer;
+  }
+  .cardListBox{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 25rem;
+    background-color:white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    margin-top: 1rem;
+    overflow-y: scroll;
+    padding: 0.4rem;
+  }

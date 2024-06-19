@@ -1,0 +1,86 @@
+.cardBody{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: inherit;
+    height: 5rem;
+    background-color:  #797198;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 1.2rem;
+
+}
+p{
+    font-size: small;
+    margin: 0;
+    color: white;
+}
+h4{
+    margin: 0;
+    color: white;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    height: inherit;
+    width: 50%;
+   
+}
+.btnBox{
+    display: flex;
+    align-items: end;
+    justify-content: right;
+   width: 50%;
+   height: inherit;
+ 
+  
+}
+.btn{
+  background-color: white;
+  color: black;
+}
+.btn:hover{
+    background-color: red;
+    color: white
+}
+.dayStatus{
+   
+    width: 50%;
+    height: 12vh;
+    /* background-color: black; */
+}
+.dayStatus{
+
+}
+.round{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 2.5rem;
+    background-color:white;
+}
+.dateBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 1.5rem;
+    background-color:white;
+border-radius: 0.2rem;
+}
+ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0.2rem;
+}
