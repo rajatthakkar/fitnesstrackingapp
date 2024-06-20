@@ -9,21 +9,25 @@ import { getInitialState } from '../redux/reducers/getHabbitReducer.js';
 import { habits } from '../redux/reducers/getHabbitReducer.js';
 import { Outlet } from 'react-router-dom';
 function LandingPage() {
+  // Gatting Habbits
   const habbits = useSelector(habits)
   console.log(habbits)
+  // Dispatch Function
   const dispatch = useDispatch();
+  // Handle Input Field With isFocused var / And digine Use State Hook
   const [isFocused, setIsFocused] = useState(false);
   const[habbitName,setHabbit]=useState('')
+  // Tostifire
   const messsage = useSelector(habbitNotificatio)
   const notify = () => toast(messsage);
-
+  // Calling GetInitialize function to get all the habbits
    useEffect(()=>{
     dispatch(getInitialState())
    },[dispatch])
      
 
    
-   
+  //  handle submit function
    const handleSubmit=()=>{
     console.log(habbitName)
       dispatch(addHabit(habbitName))
@@ -46,8 +50,9 @@ function LandingPage() {
           </div>
             <div className={style.cardListBox}>
               {
+                // Itreate Habbits
                 habbits.map((hb,index)=>(
-                   
+                  //  send props 
                   <Card hb={hb}
                     key={hb.id}/>
                 ))

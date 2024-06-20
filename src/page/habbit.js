@@ -6,46 +6,21 @@ import { useDispatch,} from 'react-redux';
 import { fetchHabbit } from '../redux/reducers/getHabbitOnId.Reducer'
 import { useEffect } from 'react'
 import { Singlehabits } from '../redux/reducers/getHabbitOnId.Reducer'
-// import { useState } from 'react';
 import { updateHabitField } from '../redux/reducers/getHabbitOnId.Reducer';
 function HabbitCard() {
-  // const [updatedValue, setUpdatedValue] = useState([]);
+//  Gatting card Id here
   const {id} = useParams()
+  // Dispatch Function
   const dispatch = useDispatch();
+  // Gating Habbits
   const habbits = useSelector(Singlehabits);
+  // Calling FatcHabbit Function
   useEffect(() => {
     if (id) {
       dispatch(fetchHabbit(id));
     }
   }, [dispatch, id,habbits]);
-
- 
-
-  
-  // const habbit = habbits.find(hb => hb.id === id);
-  // console.log(habbit)
-  // if (!habbit) {
-  //   return <div className={Style.cardBody}>Habbit not found</div>;
-  // }
-  // const handleUpdateField = async (data) => {
-  //   console.log(data)
-  //   const newCompletedTime = habbits.completedTime.map(dayStatus => {
-  //     if (dayStatus.day === data.day) {
-  //       return { ...dayStatus, status: data.status };
-  //     }
-  //     return dayStatus;
-  //   });
-  //   console.log(newCompletedTime)
-  //   setUpdatedValue(newCompletedTime);
-  //   try {
-  //     // Replace 'fieldName' with the actual field name you want to update
-  //      dispatch(updateHabitField({ id: id, fieldName: habbits.completedTime, updatedValue }));
-  //     // Optionally handle success (e.g., show a success message)
-  //   } catch (error) {
-  //     // Handle error (e.g., show an error message)
-  //     console.error('Error updating habit field:', error);
-  //   }
-  // };
+  //  Handle Update Function
   const handleUpdateField = async (dayStatus) => {
     let updatedStatus;
     console.log(dayStatus.status)
@@ -67,9 +42,6 @@ function HabbitCard() {
         }
         return item;
       });
-  
-      // setUpdatedValue(newCompletedTime); // Update local state with the new completedTime array
-  
       // Dispatch action to update Firestore document
       await dispatch(updateHabitField({ id: id, fieldName: 'completedTime', updatedValue: newCompletedTime }));
       // Optionally handle success (e.g., show a success message)

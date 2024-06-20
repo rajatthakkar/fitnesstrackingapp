@@ -7,8 +7,10 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function Card({hb,index}) {
+  //  dispatch Function 
   const dispatch = useDispatch()
    console.log(hb.id)
+  //  handle delete Function
   const handleDelete=async (id)=>{
     try {
       const docRef=doc(db, "habbits", id) 
@@ -20,15 +22,11 @@ function Card({hb,index}) {
    console.log(id)
 
   }
-  const handleRoute =(id)=>{
-    console.log(id)
-  }
   
- 
   return (
     <>
-   <Link to={`${hb.id}`} className={Style.cardBody}>
-   <div onClick={()=>handleRoute(hb.id)} className={Style.cardBody}>
+  
+   <div  className={Style.cardBody}>
     
     <div className={Style.left}>
       <h4>{hb.habbitName}</h4>
@@ -37,9 +35,10 @@ function Card({hb,index}) {
     </div>
     <div className={Style.btnBox}>
       <button className={Style.btn} onClick={(e)=>handleDelete(hb.id)}>Delete</button>
+      <Link to={`${hb.id}`}> <button>Show Details</button> </Link> 
     </div>
   </div>
-   </Link>  
+   
    
     
     </>
